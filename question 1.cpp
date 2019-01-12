@@ -1,10 +1,14 @@
+//include library file
 #include<iostream>
 using namespace std;
 
 class Node{
 	public:
+	//the data part of node
 		int data;
+	//the pointer part
 		Node * next;
+	//contructor for node to null
 		Node(){
 			next = NULL;
 		}
@@ -12,12 +16,14 @@ class Node{
 
 class Linkedlist{
 	public:
+	//assigning the head and the tail
 		Node * head;
 		Node * tail;
 		Linkedlist(){
 			head=NULL;
 			tail=NULL;
 		}
+	//to insert the node in the end
 		void insrt(int no){
 			
 			Node * temp=new Node;
@@ -33,7 +39,7 @@ class Linkedlist{
 			}
 		}
 		
-		
+		//inserting node at a point
 		void insrtat(int pos,int no){
 			Node * curnt=head;
 			int i=1;
@@ -48,6 +54,7 @@ class Linkedlist{
 			curnt->next=temp;
 			
 		}
+	//deleting the node in the end
 		void deleteit(){
 			Node * temp=tail;
 			Node * curnt=head;
@@ -58,7 +65,7 @@ class Linkedlist{
 			curnt->next=NULL;
 			tail=curnt;
 			delete temp;
-		}
+		}//deleting the node at a point
 		void deleteat(int pos){
 		
 		Node * curnt =head;
@@ -72,7 +79,7 @@ class Linkedlist{
 		delete temp;
 		}
 		
-		
+		//to print the no of items
 		void countitems(){
 			Node * curnt =head;
 			int i=0;
@@ -84,6 +91,7 @@ class Linkedlist{
 			}
 			cout<<"The number of items are "<<i<<endl;
 		}
+	//to diplay everything
 		void display(){
 			Node * curnt=head;
 			while(curnt!=NULL){
@@ -95,7 +103,7 @@ class Linkedlist{
 		}
 };
 
-
+//the main function
 int main(){
 	Linkedlist L1;
 	L1.insrt(10);
